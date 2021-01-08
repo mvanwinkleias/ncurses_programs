@@ -1,4 +1,6 @@
 #include <curses.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define POSX 10
 #define POSY 5

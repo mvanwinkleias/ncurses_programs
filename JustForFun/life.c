@@ -1,4 +1,5 @@
 #include <curses.h>
+#include <stdlib.h>
 
 int STARTX = 0;
 int STARTY = 0;
