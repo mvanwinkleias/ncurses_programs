@@ -7,6 +7,9 @@
 # http://www.linux.lk/~anuradha/
 #
 
+use strict;
+use warnings;
+
 use Curses;
 
 initscr();
@@ -14,7 +17,7 @@ start_color();
 
 init_pair(1, COLOR_CYAN, COLOR_BLACK);
 printw("A Big string which i didn't care to type fully ");
-chgat(0, 0, -1, A_BLINK, 1, NULL);
+chgat(0, 0, -1, A_BLINK, 1, 0);
 
 refresh();
 getch();
