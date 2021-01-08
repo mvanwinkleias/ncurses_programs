@@ -1,4 +1,5 @@
 #include <ncurses.h>
+#include <string.h>
 
 #define WIDTH 30
 #define HEIGHT 10 
