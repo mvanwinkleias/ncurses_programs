@@ -7,6 +7,9 @@
 # http://www.linux.lk/~anuradha/
 #
 
+use strict;
+use warnings;
+
 use Curses;
 
 initscr();

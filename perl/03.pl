@@ -8,10 +8,13 @@
 #
 
 # We use addstr() instead of printw()
+use strict;
+use warnings;
 
 use Curses;
 
-$mesg = "Just a string";
+my $mesg = "Just a string";
+my ($row, $col);
 
 initscr();
 getmaxyx($row, $col);

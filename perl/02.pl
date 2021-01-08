@@ -7,6 +7,8 @@
 # http://www.linux.lk/~anuradha/
 #
 
+use strict;
+use warnings;
 use Curses;
 
 initscr();
@@ -15,7 +17,7 @@ keypad(1);
 noecho();
 
 printw("Type any character to see it in bold\n");
-$ch = getch();
+my $ch = getch();
 
 if ($ch == KEY_F(1)) {
     printw("F1 Key pressed");
