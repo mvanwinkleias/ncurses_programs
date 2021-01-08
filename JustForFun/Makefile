@@ -20,7 +20,7 @@ ${EXE_DIR}/%: %.o
 	${CC} -o $@ $< ${LIBS}
 
 %.o: ${SRC_DIR}/%.c
-	${CC} -o $@ -c $<
+	${CC} -o $@ -c $< ${LIBS}
 
 all:    ${EXES}
 
