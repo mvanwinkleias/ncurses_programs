@@ -9,10 +9,13 @@
 
 # We first read all the input into an array and join
 # it to a single string with newlines.
+use strict;
+use warnings;
 
 use Curses;
 
 initscr();
+my (@lines, $lines);
 
 @lines = <>;
 $lines = join "", @lines;

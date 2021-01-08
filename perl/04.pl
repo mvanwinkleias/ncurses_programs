@@ -9,9 +9,13 @@
 
 # We use addstr() instead of printw()
 
+use strict;
+use warnings;
+
 use Curses;
 
-$mesg = "Enter a string: ";
+my $mesg = "Enter a string: ";
+my ($row, $col, $LINES, $str);
 
 initscr();
 getmaxyx($row, $col);
