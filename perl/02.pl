@@ -19,7 +19,7 @@ noecho();
 printw("Type any character to see it in bold\n");
 my $ch = getch();
 
-if ($ch == KEY_F(1)) {
+if ($ch eq KEY_F(1)) {
     printw("F1 Key pressed");
 }
 else {

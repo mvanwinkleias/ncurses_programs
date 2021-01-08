@@ -15,7 +15,7 @@ use warnings;
 use Curses;
 
 my $mesg = "Enter a string: ";
-my ($row, $col, $LINES, $str);
+my ($row, $col, $str);
 
 initscr();
 getmaxyx($row, $col);

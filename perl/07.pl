@@ -7,20 +7,24 @@
 # http://www.linux.lk/~anuradha/
 #
 
+use strict;
+use warnings;
+
 use Curses;
 
 initscr();
 cbreak();
 keypad(1);
 
-$height = 3;
-$width = 10;
-$starty = ($LINES - $height) / 2;
-$startx = ($COLS - $width) / 2;
+my $height = 3;
+my $width = 10;
+my $starty = ($LINES - $height) / 2;
+my $startx = ($COLS - $width) / 2;
 printw("Press F1 to exit");
 refresh();
-$my_win = create_newwin($height, $width, $starty, $startx);
+my $my_win = create_newwin($height, $width, $starty, $startx);
 
+my $ch;
 while (($ch = getch()) != KEY_F(1)) {
     if ($ch == KEY_LEFT) {
 	destroy_win($my_win);
@@ -43,14 +47,14 @@ while (($ch = getch()) != KEY_F(1)) {
 endwin();
 
 sub create_newwin {
-    $local_win = newwin(shift, shift, shift, shift);
+    my $local_win = newwin(shift, shift, shift, shift);
     box($local_win, 0, 0);
     refresh($local_win);
     return $local_win;
 }
 
 sub destroy_win {
-    $local_win = shift;
+    my $local_win = shift;
     border($local_win, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
     refresh($local_win);
     delwin($local_win);
