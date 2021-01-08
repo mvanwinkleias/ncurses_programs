@@ -1,4 +1,6 @@
 #include <panel.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct _PANEL_DATA {
 	int x, y, w, h;

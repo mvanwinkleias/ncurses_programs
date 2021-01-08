@@ -1,4 +1,5 @@
 #include <panel.h>
+#include <string.h>
 
 typedef struct _PANEL_DATA {
 	int hide;	/* TRUE if panel is hidden */
