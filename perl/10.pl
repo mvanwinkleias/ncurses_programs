@@ -7,14 +7,17 @@
 # http://www.linux.lk/~anuradha/
 #
 
+use strict;
+use warnings;
+
 use Curses;
 
-$width = 30;
-$height = 10;
-$startx = 0;
-$starty = 0;
+my $width = 30;
+my $height = 10;
+my $startx = 0;
+my $starty = 0;
 
-@choices = (
+my @choices = (
     "Choice 1",
     "Choice 2",
     "Choice 3",
@@ -22,10 +25,10 @@ $starty = 0;
     "Exit"
 );
 
-$n_choices = @choices;
+my $n_choices = @choices;
 
-$highlight = 1;
-$choice = 0;
+my $highlight = 1;
+my $choice = 0;
 
 initscr();
 clear();
@@ -34,7 +37,7 @@ cbreak();
 $startx = ($COLS - $width) / 2;
 $starty = ($LINES - $height) / 2;
 
-$menu_win = newwin($height, $width, $starty, $startx);
+my $menu_win = newwin($height, $width, $starty, $startx);
 keypad(1);
 keypad($menu_win, 1);
 addstr(0, 0, "Use arrow keys to go up and down, Press enter to select a choice");
@@ -42,7 +45,7 @@ refresh();
 print_menu($menu_win, $highlight);
 
 while (1) {
-    $c = getch($menu_win);
+    my $c = getch($menu_win);
     if ($c == KEY_UP) {
 	if ($highlight == 1) {
 	    $highlight = $n_choices;
@@ -76,12 +79,13 @@ refresh();
 endwin();
 
 sub print_menu {
-    $menu_win = shift;
-    $highlight = shift;
+    my $menu_win = shift;
+    my $highlight = shift;
 
-    $x = 2;
-    $y = 2;
+    my $x = 2;
+    my $y = 2;
     box($menu_win, 0, 0);
+	my $i;
     for ($i = 0; $i < $n_choices; $i++) {
 	if ($highlight == $i + 1) {
 	    attron($menu_win, A_REVERSE);
