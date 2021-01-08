@@ -7,6 +7,9 @@
 # http://www.linux.lk/~anuradha/
 #
 
+use strict;
+use warnings;
+
 use Curses;
 
 initscr();
@@ -25,21 +28,22 @@ getch();
 endwin();
 
 sub print_in_middle {
-    $win = shift;
-    $starty = shift;
-    $startx = shift;
-    $width = shift;
-    $string = shift;
+    my $win = shift;
+    my $starty = shift;
+    my $startx = shift;
+    my $width = shift;
+    my $string = shift;
 
     $win = stdscr unless ($win);
 
+	my ($x, $y);
     getyx($win, $y, $x);
     
     $x = $startx if ($startx);
     $y = $starty if ($starty);
     $width = $COLS unless ($width);
-    $length = length($string);
-    $temp = ($width - $length) / 2;
+    my $length = length($string);
+    my $temp = ($width - $length) / 2;
     $x = $startx + $temp;
     addstr($y, $x, $string);
     refresh();
