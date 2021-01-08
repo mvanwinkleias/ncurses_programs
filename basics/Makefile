@@ -9,6 +9,7 @@ SRC_DIR=.
 EXE_DIR=../demo/exe
 
 EXES = \
+	${EXE_DIR}/acs_vars \
     ${EXE_DIR}/hello_world \
 	${EXE_DIR}/init_func_example \
 	${EXE_DIR}/key_code \
